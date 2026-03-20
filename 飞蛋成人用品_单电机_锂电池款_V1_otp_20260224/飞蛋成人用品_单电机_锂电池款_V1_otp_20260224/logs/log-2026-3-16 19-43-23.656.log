@@ -1,0 +1,170 @@
+ÏµÍ³Ê±¼ä£º2026-3-16 19:43:23.656
+Ö÷Ïß³Ì:[inf][19:43:23.656]:WSÁ¿²ú¹¤¾ßv2.47_8010_otp
+Ö÷Ïß³Ì:[inf][19:43:23.656]:ÒÑ¼ÓÔØ£ºwatchfiles = true
+Ö÷Ïß³Ì:[inf][19:43:23.656]:ÒÑ¼ÓÔØ£ºreboot = true
+Ö÷Ïß³Ì:[inf][19:43:23.656]:ÒÑ¼ÓÔØ£ºlog = true
+Ö÷Ïß³Ì:[inf][19:43:23.656]:ÒÑ¼ÓÔØ£ºautodown = false
+Ö÷Ïß³Ì:[inf][19:43:23.656]:ÒÑ¼ÓÔØ£ºdown_baudrate = 1000000
+Ö÷Ïß³Ì:[inf][19:43:23.656]:ÒÑ¼ÓÔØ£ºprint_baudrate = 115200
+Ö÷Ïß³Ì:[inf][19:43:23.656]:ÒÑ¼ÓÔØ£ºreset = powerup
+Ö÷Ïß³Ì:[inf][19:43:23.656]:ÒÑ¼ÓÔØ£ºshark_timeout = 5000
+Ö÷Ïß³Ì:[inf][19:43:23.656]:ÒÑ¼ÓÔØ£ºapp = ^ws8%d+_%w?%w+_app_.*%.hex$
+Ö÷Ïß³Ì:[inf][19:43:23.656]:ÒÑ¼ÓÔØ£ºstack = ^ws8%d+_%w?%w+_stack.*%.hex$
+Ö÷Ïß³Ì:[inf][19:43:23.656]:ÒÑ¼ÓÔØ£ºboot = ^ws8%d+_%w?%w+_boot.*%.hex$
+Ö÷Ïß³Ì:[inf][19:43:23.656]:ÒÑ¼ÓÔØ£ºpart = ^ws8%d+_%w?%w+_part.*%.cfg$
+Ö÷Ïß³Ì:[inf][19:43:23.656]:ÒÑ¼ÓÔØ£ºuserdata = ^ws8%d+_%w?%w+_userdata.*%.cfg$
+Ö÷Ïß³Ì:[inf][19:43:23.656]:ÒÑ¼ÓÔØ£ºtotal_success = 2496
+Ö÷Ïß³Ì:[inf][19:43:23.656]:ÒÑ¼ÓÔØ£ºtotal_down = 2753
+Ö÷Ïß³Ì:[inf][19:43:23.656]:LOGÎÄ¼şÉèÖÃ³É¹¦£¡
+COM6:[inf][20:02:38.749]:µÈ´ıÏÂÔØ 
+COM6:[20:02:38.766]:ÍÏ×§Ê¶±ğ:[inf][20:02:45.393]:[line:776]·¢ÏÖ³ÌĞòÈë¿ÚµØÖ·£º0x00004101
+ÍÏ×§Ê¶±ğ:[inf][20:02:45.393]:HEX:ÒÑÊ¶±ğµ½¿é: 0x00004080(12380)
+COM6:[inf][20:02:45.393]:ÎÕÊÖÖĞ 
+COM6:[inf][20:02:50.420]:ÎÕÊÖÊ§°Ü 
+COM6:[inf][20:02:50.421]:[string "±»ÏÂÔØÉè±¸.lua"]:154: 
+stack traceback:
+	[C]: in function 'error'
+	[string "±»ÏÂÔØÉè±¸.lua"]:154: in field 'err_exit'
+	[string "Ğ¾Æ¬Ê¶±ğ.lua"]:219: in function <[string "Ğ¾Æ¬Ê¶±ğ.lua"]:136>
+	[C]: in function 'pcall'
+	[string "±»ÏÂÔØÉè±¸.lua"]:123: in upvalue 'doTask'
+	[string "±»ÏÂÔØÉè±¸.lua"]:175: in function <[string "±»ÏÂÔØÉè±¸.lua"]:145>
+	[C]: in function 'pcall'
+	[string "Éè±¸¹¤×÷Á÷.lua"]:32: in upvalue 'deviceRunning'
+	[string "Éè±¸¹¤×÷Á÷.lua"]:82: in function <[string "Éè±¸¹¤×÷Á÷.lua"]:40>
+	[C]: in function 'pcall'
+	[string "ÈÎÎñ¹ÜÀí.lua"]:8: in function <[string "ÈÎÎñ¹ÜÀí.lua"]:7>
+COM6:[inf][20:02:50.421]:ÏÂÔØÊ§°Ü ³É¹¦:0 Ê§°Ü:1
+COM6:[20:02:50.443]:COM6:[inf][20:03:04.723]:µÈ´ıÏÂÔØ 
+COM6:[20:03:04.739]:ÍÏ×§Ê¶±ğ:[inf][20:03:12.031]:[line:776]·¢ÏÖ³ÌĞòÈë¿ÚµØÖ·£º0x00004101
+ÍÏ×§Ê¶±ğ:[inf][20:03:12.031]:HEX:ÒÑÊ¶±ğµ½¿é: 0x00004080(12380)
+COM6:[inf][20:03:12.031]:ÎÕÊÖÖĞ 
+COM6:[inf][20:03:17.061]:ÎÕÊÖÊ§°Ü 
+COM6:[inf][20:03:17.061]:[string "±»ÏÂÔØÉè±¸.lua"]:154: 
+stack traceback:
+	[C]: in function 'error'
+	[string "±»ÏÂÔØÉè±¸.lua"]:154: in field 'err_exit'
+	[string "Ğ¾Æ¬Ê¶±ğ.lua"]:219: in function <[string "Ğ¾Æ¬Ê¶±ğ.lua"]:136>
+	[C]: in function 'pcall'
+	[string "±»ÏÂÔØÉè±¸.lua"]:123: in upvalue 'doTask'
+	[string "±»ÏÂÔØÉè±¸.lua"]:175: in function <[string "±»ÏÂÔØÉè±¸.lua"]:145>
+	[C]: in function 'pcall'
+	[string "Éè±¸¹¤×÷Á÷.lua"]:32: in upvalue 'deviceRunning'
+	[string "Éè±¸¹¤×÷Á÷.lua"]:82: in function <[string "Éè±¸¹¤×÷Á÷.lua"]:40>
+	[C]: in function 'pcall'
+	[string "ÈÎÎñ¹ÜÀí.lua"]:8: in function <[string "ÈÎÎñ¹ÜÀí.lua"]:7>
+COM6:[inf][20:03:17.061]:ÏÂÔØÊ§°Ü ³É¹¦:0 Ê§°Ü:2
+COM6:[20:03:17.079]:COM6:[inf][20:04:17.730]:µÈ´ıÏÂÔØ 
+COM6:[20:04:17.747]:ÍÏ×§Ê¶±ğ:[inf][20:04:23.780]:[line:776]·¢ÏÖ³ÌĞòÈë¿ÚµØÖ·£º0x00004101
+ÍÏ×§Ê¶±ğ:[inf][20:04:23.780]:HEX:ÒÑÊ¶±ğµ½¿é: 0x00004080(12380)
+COM6:[inf][20:04:23.780]:ÎÕÊÖÖĞ 
+COM6:[inf][20:04:28.807]:ÎÕÊÖÊ§°Ü 
+COM6:[inf][20:04:28.807]:[string "±»ÏÂÔØÉè±¸.lua"]:154: 
+stack traceback:
+	[C]: in function 'error'
+	[string "±»ÏÂÔØÉè±¸.lua"]:154: in field 'err_exit'
+	[string "Ğ¾Æ¬Ê¶±ğ.lua"]:219: in function <[string "Ğ¾Æ¬Ê¶±ğ.lua"]:136>
+	[C]: in function 'pcall'
+	[string "±»ÏÂÔØÉè±¸.lua"]:123: in upvalue 'doTask'
+	[string "±»ÏÂÔØÉè±¸.lua"]:175: in function <[string "±»ÏÂÔØÉè±¸.lua"]:145>
+	[C]: in function 'pcall'
+	[string "Éè±¸¹¤×÷Á÷.lua"]:32: in upvalue 'deviceRunning'
+	[string "Éè±¸¹¤×÷Á÷.lua"]:82: in function <[string "Éè±¸¹¤×÷Á÷.lua"]:40>
+	[C]: in function 'pcall'
+	[string "ÈÎÎñ¹ÜÀí.lua"]:8: in function <[string "ÈÎÎñ¹ÜÀí.lua"]:7>
+COM6:[inf][20:04:28.807]:ÏÂÔØÊ§°Ü ³É¹¦:0 Ê§°Ü:3
+COM6:[20:04:28.823]:COM6:[inf][20:04:58.736]:µÈ´ıÏÂÔØ 
+COM6:[20:04:58.753]:ÍÏ×§Ê¶±ğ:[inf][20:05:13.807]:[line:776]·¢ÏÖ³ÌĞòÈë¿ÚµØÖ·£º0x00004101
+ÍÏ×§Ê¶±ğ:[inf][20:05:13.807]:HEX:ÒÑÊ¶±ğµ½¿é: 0x00004080(12380)
+COM6:[inf][20:05:13.807]:ÎÕÊÖÖĞ 
+COM6:[inf][20:05:18.838]:ÎÕÊÖÊ§°Ü 
+COM6:[inf][20:05:18.838]:[string "±»ÏÂÔØÉè±¸.lua"]:154: 
+stack traceback:
+	[C]: in function 'error'
+	[string "±»ÏÂÔØÉè±¸.lua"]:154: in field 'err_exit'
+	[string "Ğ¾Æ¬Ê¶±ğ.lua"]:219: in function <[string "Ğ¾Æ¬Ê¶±ğ.lua"]:136>
+	[C]: in function 'pcall'
+	[string "±»ÏÂÔØÉè±¸.lua"]:123: in upvalue 'doTask'
+	[string "±»ÏÂÔØÉè±¸.lua"]:175: in function <[string "±»ÏÂÔØÉè±¸.lua"]:145>
+	[C]: in function 'pcall'
+	[string "Éè±¸¹¤×÷Á÷.lua"]:32: in upvalue 'deviceRunning'
+	[string "Éè±¸¹¤×÷Á÷.lua"]:82: in function <[string "Éè±¸¹¤×÷Á÷.lua"]:40>
+	[C]: in function 'pcall'
+	[string "ÈÎÎñ¹ÜÀí.lua"]:8: in function <[string "ÈÎÎñ¹ÜÀí.lua"]:7>
+COM6:[inf][20:05:18.838]:ÏÂÔØÊ§°Ü ³É¹¦:0 Ê§°Ü:4
+COM6:[20:05:18.855]:ÍÏ×§Ê¶±ğ:[inf][20:05:24.325]:[line:776]·¢ÏÖ³ÌĞòÈë¿ÚµØÖ·£º0x00004101
+ÍÏ×§Ê¶±ğ:[inf][20:05:24.326]:HEX:ÒÑÊ¶±ğµ½¿é: 0x00004080(12380)
+COM6:[inf][20:05:24.326]:ÎÕÊÖÖĞ 
+COM6:[inf][20:05:29.353]:ÎÕÊÖÊ§°Ü 
+COM6:[inf][20:05:29.353]:[string "±»ÏÂÔØÉè±¸.lua"]:154: 
+stack traceback:
+	[C]: in function 'error'
+	[string "±»ÏÂÔØÉè±¸.lua"]:154: in field 'err_exit'
+	[string "Ğ¾Æ¬Ê¶±ğ.lua"]:219: in function <[string "Ğ¾Æ¬Ê¶±ğ.lua"]:136>
+	[C]: in function 'pcall'
+	[string "±»ÏÂÔØÉè±¸.lua"]:123: in upvalue 'doTask'
+	[string "±»ÏÂÔØÉè±¸.lua"]:175: in function <[string "±»ÏÂÔØÉè±¸.lua"]:145>
+	[C]: in function 'pcall'
+	[string "Éè±¸¹¤×÷Á÷.lua"]:32: in upvalue 'deviceRunning'
+	[string "Éè±¸¹¤×÷Á÷.lua"]:82: in function <[string "Éè±¸¹¤×÷Á÷.lua"]:40>
+	[C]: in function 'pcall'
+	[string "ÈÎÎñ¹ÜÀí.lua"]:8: in function <[string "ÈÎÎñ¹ÜÀí.lua"]:7>
+COM6:[inf][20:05:29.353]:ÏÂÔØÊ§°Ü ³É¹¦:0 Ê§°Ü:5
+COM6:[20:05:29.368]:COM6:[inf][20:07:46.368]:µÈ´ıÏÂÔØ 
+COM6:[20:07:46.389]:ÍÏ×§Ê¶±ğ:[inf][20:07:51.080]:[line:776]·¢ÏÖ³ÌĞòÈë¿ÚµØÖ·£º0x00004101
+ÍÏ×§Ê¶±ğ:[inf][20:07:51.080]:HEX:ÒÑÊ¶±ğµ½¿é: 0x00004080(12380)
+COM6:[inf][20:07:51.080]:ÎÕÊÖÖĞ 
+COM6:[inf][20:07:56.103]:ÎÕÊÖÊ§°Ü 
+COM6:[inf][20:07:56.103]:[string "±»ÏÂÔØÉè±¸.lua"]:154: 
+stack traceback:
+	[C]: in function 'error'
+	[string "±»ÏÂÔØÉè±¸.lua"]:154: in field 'err_exit'
+	[string "Ğ¾Æ¬Ê¶±ğ.lua"]:219: in function <[string "Ğ¾Æ¬Ê¶±ğ.lua"]:136>
+	[C]: in function 'pcall'
+	[string "±»ÏÂÔØÉè±¸.lua"]:123: in upvalue 'doTask'
+	[string "±»ÏÂÔØÉè±¸.lua"]:175: in function <[string "±»ÏÂÔØÉè±¸.lua"]:145>
+	[C]: in function 'pcall'
+	[string "Éè±¸¹¤×÷Á÷.lua"]:32: in upvalue 'deviceRunning'
+	[string "Éè±¸¹¤×÷Á÷.lua"]:82: in function <[string "Éè±¸¹¤×÷Á÷.lua"]:40>
+	[C]: in function 'pcall'
+	[string "ÈÎÎñ¹ÜÀí.lua"]:8: in function <[string "ÈÎÎñ¹ÜÀí.lua"]:7>
+COM6:[inf][20:07:56.103]:ÏÂÔØÊ§°Ü ³É¹¦:0 Ê§°Ü:6
+COM6:[20:07:56.118]:COM6:[20:08:17.418]:COM6:[20:08:17.433]:ıÿCOM6:[20:08:17.448]:şşÃCOM6:[20:08:17.463]:3|COM6:[20:08:17.478]:COM6:[20:08:17.494]:ÿCOM6:[20:08:17.509]:ÿşÿàƒşğàCOM6:[20:08:17.525]:àÀ€øÿ „àø@ üCOM6:[20:08:18.412]:COM6:[20:08:18.518]:ø@–êş
+COM6:[20:08:18.533]:ù_Ü_ÿCOM6:[20:08:18.578]:COM6:[20:08:18.608]:üüøCOM6:[20:08:21.662]:ÍÏ×§Ê¶±ğ:[inf][20:08:27.401]:[line:776]·¢ÏÖ³ÌĞòÈë¿ÚµØÖ·£º0x00004101
+ÍÏ×§Ê¶±ğ:[inf][20:08:27.401]:HEX:ÒÑÊ¶±ğµ½¿é: 0x00004080(12380)
+COM6:[inf][20:08:27.401]:ÎÕÊÖÖĞ 
+COM6:[inf][20:08:32.437]:ÎÕÊÖÊ§°Ü 
+COM6:[inf][20:08:32.437]:[string "±»ÏÂÔØÉè±¸.lua"]:154: 
+stack traceback:
+	[C]: in function 'error'
+	[string "±»ÏÂÔØÉè±¸.lua"]:154: in field 'err_exit'
+	[string "Ğ¾Æ¬Ê¶±ğ.lua"]:219: in function <[string "Ğ¾Æ¬Ê¶±ğ.lua"]:136>
+	[C]: in function 'pcall'
+	[string "±»ÏÂÔØÉè±¸.lua"]:123: in upvalue 'doTask'
+	[string "±»ÏÂÔØÉè±¸.lua"]:175: in function <[string "±»ÏÂÔØÉè±¸.lua"]:145>
+	[C]: in function 'pcall'
+	[string "Éè±¸¹¤×÷Á÷.lua"]:32: in upvalue 'deviceRunning'
+	[string "Éè±¸¹¤×÷Á÷.lua"]:82: in function <[string "Éè±¸¹¤×÷Á÷.lua"]:40>
+	[C]: in function 'pcall'
+	[string "ÈÎÎñ¹ÜÀí.lua"]:8: in function <[string "ÈÎÎñ¹ÜÀí.lua"]:7>
+COM6:[inf][20:08:32.437]:ÏÂÔØÊ§°Ü ³É¹¦:0 Ê§°Ü:7
+COM6:[20:08:35.746]:COM6:[20:08:37.420]:øCOM6:[20:08:41.040]:COM6:[20:08:41.056]:şÿÉîáòï
+COM6:[20:08:41.116]:öãƒ@şûÿÍÏ×§Ê¶±ğ:[inf][20:08:45.749]:[line:776]·¢ÏÖ³ÌĞòÈë¿ÚµØÖ·£º0x00004101
+ÍÏ×§Ê¶±ğ:[inf][20:08:45.749]:HEX:ÒÑÊ¶±ğµ½¿é: 0x00004080(12380)
+COM6:[inf][20:08:45.749]:ÎÕÊÖÖĞ 
+COM6:[inf][20:08:50.774]:ÎÕÊÖÊ§°Ü 
+COM6:[inf][20:08:50.775]:[string "±»ÏÂÔØÉè±¸.lua"]:154: 
+stack traceback:
+	[C]: in function 'error'
+	[string "±»ÏÂÔØÉè±¸.lua"]:154: in field 'err_exit'
+	[string "Ğ¾Æ¬Ê¶±ğ.lua"]:219: in function <[string "Ğ¾Æ¬Ê¶±ğ.lua"]:136>
+	[C]: in function 'pcall'
+	[string "±»ÏÂÔØÉè±¸.lua"]:123: in upvalue 'doTask'
+	[string "±»ÏÂÔØÉè±¸.lua"]:175: in function <[string "±»ÏÂÔØÉè±¸.lua"]:145>
+	[C]: in function 'pcall'
+	[string "Éè±¸¹¤×÷Á÷.lua"]:32: in upvalue 'deviceRunning'
+	[string "Éè±¸¹¤×÷Á÷.lua"]:82: in function <[string "Éè±¸¹¤×÷Á÷.lua"]:40>
+	[C]: in function 'pcall'
+	[string "ÈÎÎñ¹ÜÀí.lua"]:8: in function <[string "ÈÎÎñ¹ÜÀí.lua"]:7>
+COM6:[inf][20:08:50.775]:ÏÂÔØÊ§°Ü ³É¹¦:0 Ê§°Ü:8
+COM6:[20:08:50.807]:ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
