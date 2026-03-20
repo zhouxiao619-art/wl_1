@@ -17,6 +17,8 @@
 #include "pwm.h"
 #include "charge.h"
 
+// version V1.4  2026.2.20 09点17分
+
 void SystemInit(void)
 {
 	//此接口不需要做任何操作

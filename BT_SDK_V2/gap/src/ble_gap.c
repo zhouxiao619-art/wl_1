@@ -21,7 +21,7 @@ uint8_t adv_data[] = {
 //蓝牙扫描回应包 - 使用用户提供的格式
 //正确的制造商数据格式：长度(0x15) + 类型(0xFF) + 制造商ID(0x0901) + 数据
 uint8_t scan_rsp_data[] = {
-	0x15,0xFF,                 // 长度(21字节)和类型(制造商特定数据)
+	0x16,0xFF,                 // 长度(21字节)和类型(制造商特定数据)
 	0x09,0x01,                 // 制造商ID
 	0x00,0x01,                 // 品牌码
 	0x00,0x01,                 // 板厂码
@@ -101,12 +101,12 @@ void device_mac_data_pro(void)
 	
 	for(uint8_t i=0; i<4; i++){
 		ble_mac[i] = ((mac_data >> (i*8)) & 0xFF);
-		scan_rsp_data[i+14] = ((mac_data >> (i*8)) & 0xFF); // 更新MAC地址位置 (偏移量14)
+		scan_rsp_data[i+16] = ((mac_data >> (i*8)) & 0xFF); // 更新MAC地址位置 (偏移量14)
 	}
 	ble_mac[4] = 0x2B;
 	ble_mac[5] = 0x58;
-	scan_rsp_data[18] = 0x2B; // 更新MAC地址位置 (偏移量18)
-	scan_rsp_data[19] = 0x58; // 更新MAC地址位置 (偏移量19)
+	scan_rsp_data[20] = 0x2B; // 更新MAC地址位置 (偏移量18)
+	scan_rsp_data[21] = 0x58; // 更新MAC地址位置 (偏移量19)
 	
 	lib_stack_set_bdaddr((uint8_t *)ble_mac);
 }
