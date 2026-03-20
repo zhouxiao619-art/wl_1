@@ -30,8 +30,8 @@ int main()
 	cpu_crm_set(CRM_F_GPIO_EN, ENABLE, CRM_F_GPADC_EN, ENABLE);
 	cpu_crm_reset(CRM_F_GPIO_SRST, ENABLE, CRM_F_GPADC_SRST, ENABLE);
 	
-//	//????16M????0??32M????1
-//	soc_xtal_freq_check(1);
+//	//设置晶振频率：16M晶振传0，32M晶振传1
+	soc_xtal_freq_check(0);
 	
 	soc_init(1);
 	
@@ -70,8 +70,8 @@ int main()
 	#endif
 	
 	//晶振校准
-	set_xtal_cap(0xBA);		//针对32M晶振校准
-//	set_xtal_cap(0xCD);
+//	set_xtal_cap(0xBA);		//针对32M晶振校准
+	set_xtal_cap(0xCD);		//针对16M晶振校准
 	
 	//设置发射功率
 	lib_set_power(TX_POWER_0);

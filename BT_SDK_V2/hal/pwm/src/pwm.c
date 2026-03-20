@@ -5,42 +5,42 @@
 #include "uart.h"
 
 
-uint8_t pwm_mode_flay[MOTOR_NUMBER];		//PWM模式记录数组
-uint8_t pwm_mode_switch_en[MOTOR_NUMBER];	//PWM模式切换使能数组
-uint8_t pwm_loop_switch_mode[MOTOR_NUMBER];	//PWM固定模式自动切换数组
-uint8_t pwm_work_en_flay[MOTOR_NUMBER];		//PWM固定模式使能记录数组
+uint8_t pwm_mode_flay[MOTOR_NUMBER];		//PWM?????????
+uint8_t pwm_mode_switch_en[MOTOR_NUMBER];	//PWM???л????????
+uint8_t pwm_loop_switch_mode[MOTOR_NUMBER];	//PWM?????????л?????
+uint8_t pwm_work_en_flay[MOTOR_NUMBER];		//PWM??????????????
 
 #if	M1_ENABLE
 #define M1_PWM_GPIO		GPIO_PB3
 #define M1_TIME_NUM		TIM0		
-uint8_t old_m1_pwm_mode_flay = 0;		//PWM旧模式记录变量
-uint16_t m1_pwm_switch_timeout = 0;		//PWM切换超时时间
-uint32_t m1_old_time_flay = 0;			//PWM切换超时时间起点（当下计数器时间）
+uint8_t old_m1_pwm_mode_flay = 0;		//PWM???????????
+uint16_t m1_pwm_switch_timeout = 0;		//PWM?л???????
+uint32_t m1_old_time_flay = 0;			//PWM?л??????????????????????
 #endif
 
 #if	M2_ENABLE
 #define M2_PWM_GPIO		GPIO_PB4
 #define M2_TIME_NUM		TIM1
-uint8_t old_m2_pwm_mode_flay = 0;		//PWM旧模式记录变量
-uint16_t m2_pwm_switch_timeout = 0;		//PWM切换超时时间
-uint32_t m2_old_time_flay = 0;			//PWM切换超时时间起点（当下计数器时间）
+uint8_t old_m2_pwm_mode_flay = 0;		//PWM???????????
+uint16_t m2_pwm_switch_timeout = 0;		//PWM?л???????
+uint32_t m2_old_time_flay = 0;			//PWM?л??????????????????????
 #endif
 
 #if	M3_ENABLE
 #define M3_PWM_GPIO		GPIO_PA4
 #define M3_TIME_NUM		TIM2
-uint8_t old_m3_pwm_mode_flay = 0;		//PWM旧模式记录变量
-uint16_t m3_pwm_switch_timeout = 0;		//PWM切换超时时间
-uint32_t m3_old_time_flay = 0;			//PWM切换超时时间起点（当下计数器时间）
+uint8_t old_m3_pwm_mode_flay = 0;		//PWM???????????
+uint16_t m3_pwm_switch_timeout = 0;		//PWM?л???????
+uint32_t m3_old_time_flay = 0;			//PWM?л??????????????????????
 #endif
 
 #if	CHARGE_ENABLE
 #define CHARGE_PWM_GPIO		GPIO_PA3
 #define CHARGE_TIME_NUM		TIM4
-uint16_t charge_pwm_loop_swtich_mode = 0;		//PWM自动切换模式记录
-uint8_t charge_pwm_mode_switch_en	= 0;		//PWM模式切换使能
-uint16_t charge_pwm_switch_timeout 	= 0;		//PWM切换超时时间
-uint32_t charge_old_time_flay 		= 0;		//PWM切换超时时间起点（当下计数器时间）
+uint16_t charge_pwm_loop_swtich_mode = 0;		//PWM????л??????
+uint8_t charge_pwm_mode_switch_en	= 0;		//PWM???л????
+uint16_t charge_pwm_switch_timeout 	= 0;		//PWM?л???????
+uint32_t charge_old_time_flay 		= 0;		//PWM?л??????????????????????
 
 uint16_t get_charge_pwm_loop_swtich_mode(void)
 {
@@ -198,27 +198,27 @@ void pwm_stop_mode_pro(uint8_t num)
 
 void deivce_off_pwm_reset(void)
 {
-	pwm_mode_flay_init();			//模式清除
-	pwm_mode_switch_en_init();		//使能清除
-	pwm_loop_switch_mode_init();	//切换标志位清除
-	pwm_work_en_flay_init();		//清除固定模式记录
+	pwm_mode_flay_init();			//?????
+	pwm_mode_switch_en_init();		//??????
+	pwm_loop_switch_mode_init();	//?л????λ???
+	pwm_work_en_flay_init();		//???????????
 	
 	#if	M1_ENABLE
-		old_m1_pwm_mode_flay = 0;		//PWM旧模式记录变量
-		m1_pwm_switch_timeout = 0;		//PWM切换超时时间
-		m1_old_time_flay = 0;			//PWM切换超时时间起点（当下计数器时间）
+		old_m1_pwm_mode_flay = 0;		//PWM???????????
+		m1_pwm_switch_timeout = 0;		//PWM?л???????
+		m1_old_time_flay = 0;			//PWM?л??????????????????????
 	#endif
 	
 	#if	M2_ENABLE
-		old_m2_pwm_mode_flay = 0;		//PWM旧模式记录变量
-		m2_pwm_switch_timeout = 0;		//PWM切换超时时间
-		m2_old_time_flay = 0;			//PWM切换超时时间起点（当下计数器时间）
+		old_m2_pwm_mode_flay = 0;		//PWM???????????
+		m2_pwm_switch_timeout = 0;		//PWM?л???????
+		m2_old_time_flay = 0;			//PWM?л??????????????????????
 	#endif
 	
 	#if	M3_ENABLE
-		old_m3_pwm_mode_flay = 0;		//PWM旧模式记录变量
-		m3_pwm_switch_timeout = 0;		//PWM切换超时时间
-		m3_old_time_flay = 0;			//PWM切换超时时间起点（当下计数器时间）
+		old_m3_pwm_mode_flay = 0;		//PWM???????????
+		m3_pwm_switch_timeout = 0;		//PWM?л???????
+		m3_old_time_flay = 0;			//PWM?л??????????????????????
 	#endif
 }
 
@@ -241,18 +241,18 @@ void set_old_pwm_mode_flay(uint8_t i, uint8_t mode)
 }
 
 /**
- * @brief timer优先级配置
+ * @brief timer?????????
  * @param void 
  */
 void user_timer_nvic_init()
 {
-	//优先级不可配置为0，需要大于0
+	//??????????????0?????????0
 	NVIC_SetPriority(Timer_IRQn, 3);
 	NVIC_EnableIRQ(Timer_IRQn);
 }
 
 /**
- * @brief PWM初始化配置
+ * @brief PWM?????????
  * @param void 
  */
 void user_pwm_timer_init(void)
@@ -278,7 +278,7 @@ void user_pwm_timer_init(void)
 		timer_en(M3_TIME_NUM, DISABLE);
 	#endif
 	
-	timer_pcl_reload(PWM_MODE_TIMEOUT,3199,9);
+	timer_pcl_reload(PWM_MODE_TIMEOUT,1599,4);
 	timer_update_en(PWM_MODE_TIMEOUT, ENABLE);
 	timer_it_cfg(PWM_MODE_TIMEOUT, 0);
 	timer_it_en(PWM_MODE_TIMEOUT, ENABLE);
@@ -287,7 +287,7 @@ void user_pwm_timer_init(void)
 	user_timer_nvic_init();
 }
 
-//PWM超时切换使能获取
+//PWM????л??????
 void pwm_timeout_pro(void)
 {
 	#if M1_ENABLE
@@ -325,7 +325,7 @@ void charge_pwm_timeout_pro(void)
 	}
 }
 #endif
-//PWM固定模式切换使能获取
+//PWM??????л??????
 void pwm_mode_updata_pro(void)
 {
 	#if M1_ENABLE
@@ -350,7 +350,7 @@ void pwm_mode_updata_pro(void)
 	#endif
 }
 
-//PWM关键参数变量判断，防止错误参数传入
+//PWM????????????ж????????????????
 void pwm_config_data_pro(pwm_config *config)
 {
 	if(config->duty <= 1){
@@ -367,7 +367,7 @@ void pwm_config_data_pro(pwm_config *config)
 void pwm_config_timeout_pro(uint32_t time, uint8_t pwm_num)
 {
 	user_timer3_stop();
-	if(time == 0x00){				//无需切换
+	if(time == 0x00){				//?????л?
 		switch(pwm_num)
 		{
 			#if	M1_ENABLE
@@ -409,7 +409,7 @@ void pwm_config_timeout_pro(uint32_t time, uint8_t pwm_num)
 	}
 }
 
-//PWM参数配置
+//PWM????????
 void pwm_param_config(uint8_t pwm_num, pwm_config *config)
 {	
 	uint8_t pwm;
@@ -483,7 +483,7 @@ void pwm_param_config(uint8_t pwm_num, pwm_config *config)
 	pwm_config_timeout_pro(config->timeout, pwm_num);
 }
 
-//PWM复位（即停止）
+//PWM??λ????????
 void pwm_reset(uint8_t pwm_num)
 {
 	uint8_t pwm;
@@ -541,7 +541,7 @@ void pwm_reset(uint8_t pwm_num)
 	CLEAR_SYS_NO_SLEEP_EVT(sleep_num);
 }
 
-//PWM固定模式更新
+//PWM?????????
 void pwm_mode_flay_updata(uint8_t pwm_num)
 {
 	if(pwm_num >= MOTOR_NUMBER){
