@@ -131,18 +131,18 @@ void user_start_recv_event(void)
 	lib_event_post(&recv_event);
 }
 
-extern uint8_t ble_recv_data[9];			//????????????????
-extern uint16_t ble_recv_length;			//??????????????? 
-extern uint16_t service_16bit_tx_handle;	//???????handle
+extern uint8_t ble_recv_data[9];			//BLE接收数据缓冲区
+extern uint16_t ble_recv_length;			//BLE接收数据长度
+extern uint16_t service_16bit_tx_handle;	//服务16位发送句柄
 
-uint8_t ack_data[9] = {0xAA, 0xE2, 	//??? 00 01
-					   0x00,		//??? 02
-					   0x01,		//?????λ??????? 03
-					   0x00,0x00,	//??? 04 05
-					   0x00,		//??????????1 ??   0 ??/ADC???? 06
-					   0x00,		//????????????/?????1-9/ADC???? 07
-					   0xAA			//??? 08
-};
+uint8_t ack_data[9] = {0xAA, 0xE2, 	//帧头 00 01
+				   0x00,		//命令 02
+				   0x01,		//保留字段 03
+				   0x00,0x00,	//保留 04 05
+				   0x00,		//功能码1：0表示无/ADC值 06
+				   0x00,		//功能码2：模式1-9/ADC值 07
+				   0xAA			//帧尾 08
+				};
 
 void set_ack_data(uint8_t i, uint8_t data)
 {
@@ -221,10 +221,10 @@ void ble_recv_ack_data_pro(uint8_t *data, uint8_t len)
 	}
 }
 
-//pwm_mode:PWM??  pwm_en:PWM????  pwm_num:PWM???0-5
+//pwm_mode:PWM模式  pwm_en:PWM使能  pwm_num:PWM编号0-5
 void pwm_fixed_mode_ack_data_pro(uint8_t pwm_mode, uint8_t pwm_en, uint8_t pwm_num)
 {
-	ack_data[1] = 0xE2;	//?????????
+	ack_data[1] = 0xE2;	//设置为响应命令
 	switch(pwm_num)
 	{
 		case MOTOR1:{ack_data[2] = 0x05; }break;
@@ -306,7 +306,7 @@ void recv_data_duty_pro(uint16_t data)
 }
 
 /**
- * @brief ?????????????????????????
+ * @brief 处理接收到的BLE事件
  */
 void user_recv_event_pro(void *cb_dat, event_t *e)
 {
@@ -343,11 +343,11 @@ void user_recv_event_pro(void *cb_dat, event_t *e)
 						}
 					}
 					set_pwm_work_en_flay(MOTOR1, ENABLE);
-					//led????
+					//LED提示
 					set_led_parma(DEVICE_LED_KEY_WORK_TIME, DEVICE_LED_KEY_WORK_BLINK, LED_1, LED_PRO_WITH_TIMEOUT);
 					set_app_mode_en_flay(MOTOR1, ble_recv_data[6]);
 				}else{
-					//??????????ο???????
+					//停止电机并设置相关标志
 					if(get_pwm_work_en_flay(MOTOR1)){
 						set_pwm_work_en_flay(MOTOR1, DISABLE);
 						pwm_stop_mode_pro(MOTOR1);
@@ -388,7 +388,7 @@ void user_recv_event_pro(void *cb_dat, event_t *e)
 			{
 				reset_time_tick();
 				if(ble_recv_data[6]){
-					//led????
+					//LED提示
 					if(get_pwm_work_en_flay(MOTOR2)){		//?????????????????0.3??
 						set_led_parma(DEVICE_LED_KEY_WORK_TIME, DEVICE_LED_KEY_WORK_BLINK, LED_2, LED_PRO_WITH_TIMEOUT);
 					}else{				//??????????????????
@@ -407,7 +407,7 @@ void user_recv_event_pro(void *cb_dat, event_t *e)
 					set_pwm_work_en_flay(MOTOR2, ENABLE);
 					set_app_mode_en_flay(MOTOR2, ble_recv_data[6]);
 				}else{
-					//??????????ο???????
+					//停止电机并设置相关标志
 					if(get_pwm_work_en_flay(MOTOR2)){
 						set_pwm_work_en_flay(MOTOR2, DISABLE);
 						pwm_stop_mode_pro(MOTOR2);
@@ -415,7 +415,7 @@ void user_recv_event_pro(void *cb_dat, event_t *e)
 					user_pwm_stop(MOTOR2);
 					set_pwm_loop_switch_mode(MOTOR2, 0x00);
 					
-					//led????
+					//LED提示
 					user_led_set(LED_2, DISABLE);
 					//保持app_mode_en_flay为1，以便按键切换模式时仍然向APP上报数据
 				}
@@ -452,7 +452,7 @@ void user_recv_event_pro(void *cb_dat, event_t *e)
 			{
 				reset_time_tick();
 				if(ble_recv_data[6]){
-					//led????
+					//LED提示
 					if(get_pwm_work_en_flay(MOTOR3)){		//?????????????????0.3??
 						set_led_parma(DEVICE_LED_KEY_WORK_TIME, DEVICE_LED_KEY_WORK_BLINK, LED_3, LED_PRO_WITH_TIMEOUT);
 					}else{				//??????????????????
@@ -471,7 +471,7 @@ void user_recv_event_pro(void *cb_dat, event_t *e)
 					set_pwm_work_en_flay(MOTOR3, ENABLE);
 					set_app_mode_en_flay(MOTOR3, ble_recv_data[6]);
 				}else{
-					//??????????ο???????
+					//停止电机并设置相关标志
 					if(get_pwm_work_en_flay(MOTOR3)){
 						set_pwm_work_en_flay(MOTOR3, DISABLE);
 						pwm_stop_mode_pro(MOTOR3);
@@ -479,7 +479,7 @@ void user_recv_event_pro(void *cb_dat, event_t *e)
 					user_pwm_stop(MOTOR3);
 					set_pwm_loop_switch_mode(MOTOR3, 0x00);
 					
-					//led????
+					//LED提示
 					user_led_set(LED_3, DISABLE);
 					//保持app_mode_en_flay为1，以便按键切换模式时仍然向APP上报数据
 				}
@@ -534,7 +534,7 @@ void system_looper(void *cb_dat, event_t *e)
 
 
 
-static uint8_t l_timer_event = 0x01;	//???????????0x01???????????ι???????
+static uint8_t l_timer_event = 0x01;	//定时器事件类型 0x01表示普通定时器事件
 void system_timer_start(uint8_t timer_event)
 {
 	if(l_timer_event == timer_event){
@@ -560,7 +560,7 @@ void system_timer_start(uint8_t timer_event)
 }
 
 /**
- * @brief ??????????????
+ * @brief 选择广播模式
  * @param void
  */
 void adv_mode_choose(uint8_t mode)
@@ -573,7 +573,7 @@ void adv_mode_choose(uint8_t mode)
 }
 
 /**
- * @brief ????????
+ * @brief 系统模式更新
  * @param void
  */
 void system_mode_updata(void)
@@ -584,7 +584,7 @@ void system_mode_updata(void)
 		
 		if(device_mode) {
 			SET_RTC_EVENT(LONG_TIME_EVENT);
-			reset_led_all_flay();		//????????????????
+			reset_led_all_flay();		//重置所有LED标志
 			if(lib_stack_state_get() == LIB_STACKSTATE_IDLE) {
 				DEMO_PRINTF("device adc strat ---\n");
 				lib_stack_adv_enable(true);
@@ -593,28 +593,28 @@ void system_mode_updata(void)
 					set_pwm_loop_switch_mode(i, 0x00);
 					set_pwm_mode_flay(i, KEY_PWM_MODE_ON_OFF);
 				}
-				//????LED1_2????
+				//设置LED1_2引脚
 				gpio_set_pin(LED1_2_IO);
 				set_led_enable_flay(LED_1);
 			}
 		}else {
-			if(get_charge_state() == 0x00){		//?????????????
+			if(get_charge_state() == 0x00){		//如果不在充电状态
 				reset_led_all_flay();
-				//??????????????????????????????
+				//根据ADC低电量标志设置LED
 				if(get_adc_low_en()==0x01){
 					set_led_parma(DEVICE_OFF_LED_TIME, DEVICE_OFF_LED_BLINK, LED_1, LED_PRO_NOT_TIMEOUT);
 				}else{
 					reset_led_all_flay();
-					led_init();	//??????
+					led_init();	//初始化LED
 				}
 				
 			}
 			
-			for(uint8_t i=0; i<MOTOR_NUMBER; i++){		//?????
+			for(uint8_t i=0; i<MOTOR_NUMBER; i++){		//停止所有电机
 				user_pwm_stop(i);
 			}
-			deivce_off_pwm_reset();		//??λ??????б????????ο????????
-			device_off_timer_reset();	//??λ?????
+			deivce_off_pwm_reset();		//重置PWM相关标志和状态
+			device_off_timer_reset();	//重置设备关闭定时器
 		}
 	}
 	
@@ -685,8 +685,8 @@ void user_pwm_stop(uint8_t num)
 }
 
 /**
- * @brief PWM??????л?????
- * @param num ??????
+ * @brief PWM模式处理函数
+ * @param num 电机编号
  */
 void all_pwm_mode_pro(uint8_t num)
 {
@@ -786,7 +786,7 @@ void all_pwm_mode_pro(uint8_t num)
 }
 
 /**
- * @brief ????????????
+ * @brief 系统时间更新
  * @param void
  */
 void system_time_tick_updata(void)
@@ -800,7 +800,7 @@ void system_time_tick_updata(void)
 }
 
 /**
- * @brief ?????????
+ * @brief 系统事件处理
  * @param void
  */
 void system_event_process(void)
